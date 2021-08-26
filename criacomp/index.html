@@ -10,25 +10,32 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
 	<title>Criatividade Comp</title>
 </head>
 <body>
+	<div class="box"></div>
 		<div class="container">
 			<div class="row">
-				<div class="card rounded shadow-sm bg-light p-3 my-3">
+				<div class="card rounded-3 shadow p-3 my-3">
+					<h5>Importar MIDI</h5>
 					<input id="file-input" type="file" style="display: none;" onchange="importMidiFile(this.files[0])"/>		
 			
 					<textarea class="form-control" onchange="encodingToMidiFile(this.value, 'download_inbox')" id="inbox"></textarea>
 
-					<a class="d-flex align-self-end btn btn-info text-white my-4" href="javascript:importMidi()">Importar MIDI</a> 
+					<a class="d-flex align-self-end btn btn-info text-white my-3" href="javascript:importMidi()">Importar MIDI</a> 
 				</div>
 				
-				<div class="card rounded shadow-sm bg-light p-3 my-3">
+				<div class="card rounded-3 shadow p-3 mt-3">
+					<h4 class="mb-3">Configs. Principais</h4>
 					<div class="row">
-						<div class="col-3">
+						<div class="col-3 d-flex align-middle justify-space-between">
+							<span class="mt-1">Gênero:	&nbsp;</span>
 							<select class="form-select" data-live-search="true" id="genre">
-								<optgroup label="Standard">
+								<optgroup label="Padrão">
 									<option value="chopin">Chopin</option>
 									<option value="mozart">Mozart</option>
 									<option value="rachmaninoff">Rachmaninoff</option>
@@ -45,10 +52,6 @@
 									<option value="franksinatra">Frank Sinatra</option>
 									<option value="bluegrass">Bluegrass</option>
 									<option value="tchaikovsky">Tchaikovsky</option>
-								</optgroup>
-								<optgroup label="Experimental">
-									<option value="<start>">&lt;start&gt;</option>
-									<option value="<random>">Random</option>
 								</optgroup>
 								<optgroup label="Extra">
 									<option value="thecranberries">thecranberries</option>
@@ -173,13 +176,15 @@
 					</div>
 				</div>
 
-				<div class="card rounded shadow-sm bg-light my-3 p-4">
+				<div class="card rounded-3 shadow my-3 p-4">
+					<h4>Configs. Adicionais</h4>
 					<div class="row my-4">
 						<div class="col-12 my-2">
 							<div class="row">
 								<div class="col">
 									<label for="temperature">Temperatura:</label>
 									<input class="form-control mw-100" id="temperature" value="1" type="number">
+									<small class="text-muted">Max 2</small>
 								</div>
 		
 								<div class="col">
@@ -189,6 +194,7 @@
 								<div class="col">
 									<label for="generationLength">Tamanho de Geração</label>
 									<input class="form-control mw-100" id="generationLength" value="225" type="number" max="1000"/>
+									<small class="text-muted">Max 1000</small>
 								</div>
 							</div>
 						</div>
@@ -210,7 +216,8 @@
 					</div>	
 				</div>
 
-				<div class="card rounded shadow-sm bg-white my-3 p-4">
+				<div class="card rounded-3 shadow bg-white my-5 p-4">
+					<h5>Exportar Criações</h5>
 					<div class="row">
 						<div class="col-3">
 							<a class="btn btn-outline-primary btn-sm mb-3 d-grid" href="javascript:;" id="download_outbox1">

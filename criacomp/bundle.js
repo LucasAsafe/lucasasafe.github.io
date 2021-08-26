@@ -197,10 +197,10 @@ window.extend = function() {
 		document.getElementById('sound2').src=URL.createObjectURL(new Blob([convertDataURIToBinary("data:"+format+";base64,"+response.completions[1][audioKey].substring(2,response.completions[1][audioKey].length-1))], {type : format}));
 		document.getElementById('sound3').src=URL.createObjectURL(new Blob([convertDataURIToBinary("data:"+format+";base64,"+response.completions[2][audioKey].substring(2,response.completions[2][audioKey].length-1))], {type : format}));
 		document.getElementById('sound4').src=URL.createObjectURL(new Blob([convertDataURIToBinary("data:"+format+";base64,"+response.completions[3][audioKey].substring(2,response.completions[3][audioKey].length-1))], {type : format}));
-		const outbox1 = response.completions[0].encoding;
-	  const outbox2 = response.completions[1].encoding;
-		const outbox3 = response.completions[2].encoding;
-		const outbox4 = response.completions[3].encoding;
+		document.getElementById("outbox1").value = response.completions[0].encoding;
+		document.getElementById("outbox2").value = response.completions[1].encoding;
+		document.getElementById("outbox3").value = response.completions[2].encoding;
+		document.getElementById("outbox4").value = response.completions[3].encoding;
 		window.encodingToMidiFile(response.completions[0].encoding, "download_outbox1");
 		window.encodingToMidiFile(response.completions[1].encoding, "download_outbox2");
 		window.encodingToMidiFile(response.completions[2].encoding, "download_outbox3");
