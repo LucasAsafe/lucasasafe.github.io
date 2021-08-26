@@ -1,0 +1,30 @@
+body {
+    font-family: 'Noto Sans JP', sans-serif !important;
+    font-weight: 500;
+}
+
+#loader-outer {
+    text-align: left;
+    display: inline-block;
+    border: 1px solid #808080;
+    width: 100px;
+    height: 8px;
+}
+
+#loader-inner {
+    display: inline-block;
+    background: green;
+    height: 100%;
+}
+
+@keyframes progress {
+    from {width: 0%;}
+    to {width: 100%;}
+}
+
+input[type="number"] {
+    max-width: 50px;
+}
+select {
+    max-width: 150px;
+}

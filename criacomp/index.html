@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css"> 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+	<title>Criatividade Comp</title>
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div class="card rounded shadow-sm bg-light p-3 my-3">
+					<input id="file-input" type="file" style="display: none;" onchange="importMidiFile(this.files[0])"/>		
+			
+					<textarea class="form-control" onchange="encodingToMidiFile(this.value, 'download_inbox')" id="inbox"></textarea>
+
+					<a class="d-flex align-self-end btn btn-info text-white my-4" href="javascript:importMidi()">Importar MIDI</a> 
+				</div>
+				
+				<div class="card rounded shadow-sm bg-light p-3 my-3">
+					<div class="row">
+						<div class="col-3">
+							<select class="form-select" data-live-search="true" id="genre">
+								<optgroup label="Standard">
+									<option value="chopin">Chopin</option>
+									<option value="mozart">Mozart</option>
+									<option value="rachmaninoff">Rachmaninoff</option>
+									<option value="ladygaga">Lady Gaga</option>
+									<option value="country">Country</option>
+									<option value="disney">Disney</option>
+									<option value="jazz">Jazz</option>
+									<option value="bach">Bach</option>
+									<option value="beethoven">Beethoven</option>
+									<option value="journey">Journey</option>
+									<option value="thebeatles">The Beatles</option>
+									<option value="video" selected="selected">Video Games</option>
+									<option value="broadway">Broadway</option>
+									<option value="franksinatra">Frank Sinatra</option>
+									<option value="bluegrass">Bluegrass</option>
+									<option value="tchaikovsky">Tchaikovsky</option>
+								</optgroup>
+								<optgroup label="Experimental">
+									<option value="<start>">&lt;start&gt;</option>
+									<option value="<random>">Random</option>
+								</optgroup>
+								<optgroup label="Extra">
+									<option value="thecranberries">thecranberries</option>
+									<option value="metallica">metallica</option>
+									<option value="philcollins">philcollins</option>
+									<option value="thepretenders">thepretenders</option>
+									<option value="smashmouth">smashmouth</option>
+									<option value="oasis">oasis</option>
+									<option value="allsaints">allsaints</option>
+									<option value="mariahcarey">mariahcarey</option>
+									<option value="eminem">eminem</option>
+									<option value="michaeljackson">michaeljackson</option>
+									<option value="shaniatwain">shaniatwain</option>
+									<option value="roxette">roxette</option>
+									<option value="bowiedavid">bowiedavid</option>
+									<option value="rickymartin">rickymartin</option>
+									<option value="eiffel65">eiffel65</option>
+									<option value="jenniferlopez">jenniferlopez</option>
+									<option value="acdc">acdc</option>
+									<option value="pinkfloyd">pinkfloyd</option>
+									<option value="oldfieldmike">oldfieldmike</option>
+									<option value="redhotchilipeppers">redhotchilipeppers</option>
+									<option value="therollingstones">therollingstones</option>
+									<option value="ludwigvanbeethoven">ludwigvanbeethoven</option>
+									<option value="dvorak">dvorak</option>
+									<option value="guns n' roses">guns n' roses</option>
+									<option value="duranduran">duranduran</option>
+									<option value="aerosmith">aerosmith</option>
+									<option value="prince">prince</option>
+									<option value="toto">toto</option>
+									<option value="enya">enya</option>
+									<option value="elvispresley">elvispresley</option>
+									<option value="jimihendrix">jimihendrix</option>
+									<option value="billyocean">billyocean</option>
+									<option value="scorpions">scorpions</option>
+									<option value="whitneyhouston">whitneyhouston</option>
+									<option value="ironmaiden">ironmaiden</option>
+									<option value="alanjackson">alanjackson</option>
+									<option value="billyjoel">billyjoel</option>
+									<option value="nirvana">nirvana</option>
+									<option value="andreabocelli">andreabocelli</option>
+									<option value="ozzyosbourne">ozzyosbourne</option>
+									<option value="u2">u2</option>
+									<option value="spicegirls">spicegirls</option>
+									<option value="ledzeppelin">ledzeppelin</option>
+									<option value="eagles">eagles</option>
+									<option value="bobmarley">bobmarley</option>
+									<option value="blacksabbath">blacksabbath</option>
+									<option value="silverchair">silverchair</option>
+									<option value="paulmccartney">paulmccartney</option>
+									<option value="greenday">greenday</option>
+									<option value="madonna">madonna</option>
+									<option value="eltonjohn">eltonjohn</option>
+									<option value="britneyspears">britneyspears</option>
+									<option value="pearljam">pearljam</option>
+									<option value="creed">creed</option>
+									<option value="airsupply">airsupply</option>
+									<option value="radiohead">radiohead</option>
+									<option value="cyndilauper">cyndilauper</option>
+									<option value="davidbowie">davidbowie</option>
+									<option value="johnlennon">johnlennon</option>
+									<option value="kansas">kansas</option>
+									<option value="earthwindandfire">earthwindandfire</option>
+									<option value="bonjovi">bonjovi</option>
+									<option value="backstreetboys">backstreetboys</option>
+									<option value="blink-182">blink-182</option>
+									<option value="foofighters">foofighters</option>
+									<option value="celinedion">celinedion</option>
+									<option value="queen">queen</option>
+									<option value="taylorswift">taylorswift</option>
+									<option value="shakira">shakira</option>
+									<option value="katyperry">katyperry</option>
+									<option value="michaelbuble">michaelbuble</option>
+									<option value="rihanna">rihanna</option>		
+									<option value="beyonce">beyonce</option>
+									<option value="adele">adele</option>
+									<option value="kellyclarkson">kellyclarkson</option>
+									<option value="theeagles">theeagles</option>
+									<option value="stravinsky">stravinsky</option>
+									<option value="vivaldi">vivaldi</option>
+									<option value="nightwish">nightwish</option>
+								</optgroup>
+							</select>
+						</div>
+						
+						<div class="col-8">
+							<div class="form-check mt-2 form-check-inline">				
+								<label class="form-check-label" for="piano">Piano:</label>
+								<input class="form-check-input" type="checkbox" id="piano" checked="checked"/>
+							</div>
+		
+							<div class="form-check form-check-inline">				
+								<label class="form-check-label" for="strings">Strings:</label>
+								<input class="form-check-input" type="checkbox" id="strings" checked="checked"/>
+							</div>
+		
+							<div class="form-check form-check-inline">				
+								<label class="form-check-label" for="winds">Winds:</label>
+								<input class="form-check-input" type="checkbox" id="winds" checked="checked"/>
+							</div>
+		
+							<div class="form-check form-check-inline">				
+								<label class="form-check-label" for="drums">Drums:</label>
+								<input class="form-check-input" type="checkbox" id="drums" checked="checked"/>
+							</div>
+		
+							<div class="form-check form-check-inline">				
+								<label class="form-check-label" for="harp">Harp:</label>
+								<input class="form-check-input" type="checkbox" id="harp"/>
+							</div>
+							
+							<div class="form-check form-check-inline">				
+								<label class="form-check-label" for="guitar">Guitar:</label>
+								<input class="form-check-input" type="checkbox" id="guitar" checked="checked"/>
+							</div>
+							
+							<div class="form-check form-check-inline">				
+								<label class="form-check-label" for="bass">Bass:</label>
+								<input class="form-check-input" type="checkbox" id="bass" checked="checked"/>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card rounded shadow-sm bg-light my-3 p-4">
+					<div class="row my-4">
+						<div class="col-12 my-2">
+							<div class="row">
+								<div class="col">
+									<label for="temperature">Temperatura:</label>
+									<input class="form-control mw-100" id="temperature" value="1" type="number">
+								</div>
+		
+								<div class="col">
+									<input class="form-control" id="truncation" value="27" type="hidden"/>
+								</div>
+		
+								<div class="col">
+									<label for="generationLength">Tamanho de Geração</label>
+									<input class="form-control mw-100" id="generationLength" value="225" type="number" max="1000"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col my-4">
+							Formato:
+							<select class="form-select" id="format">
+								<option value="ogg">ogg</option>
+								<option value="mp3">mp3</option>
+							</select>
+						</div>
+
+						<div class="col-12">
+							<input class="btn btn-primary" type="button" value="Generate!" onclick="extend()" id="button"/>
+								<span id="loader-outer">
+									<span id="loader-inner"></span>
+								</span>
+						</div>
+					</div>	
+				</div>
+
+				<div class="card rounded shadow-sm bg-white my-3 p-4">
+					<div class="row">
+						<div class="col-3">
+							<a class="btn btn-outline-primary btn-sm mb-3 d-grid" href="javascript:;" id="download_outbox1">
+								Exportar MIDI
+							</a>
+			
+							<audio class="w-100" controls="controls" id="sound1"/>
+						</div>
+						
+						<div class="col-3">
+							<a class="btn btn-outline-primary btn-sm mb-3 d-grid" href="javascript:;" id="download_outbox2">
+								Exportar MIDI
+							</a>
+							<audio class="w-100" controls="controls" id="sound2"/>
+						</div>
+						
+						<div class="col-3">
+							<a class="btn btn-outline-primary btn-sm mb-3 d-grid" href="javascript:;" id="download_outbox3">
+								Exportar MIDI
+							</a>
+							
+							<audio class="w-100" controls="controls" id="sound3"/>	
+						</div>
+						
+						<div class="col-3">
+							<a class="btn btn-outline-primary btn-sm mb-3 d-grid" href="javascript:;" id="download_outbox4">
+								Exportar MIDI
+							</a>
+						
+							<audio class="w-100" controls="controls" id="sound4"/>
+						</div>
+
+						
+					</div>
+				</div>
+				
+				<div style="display: none">
+					<span class="quarter"><input type="button" value="Copy upwards" onclick="copyup('outbox1')" id="button"/></span><span class="quarter"><input type="button" value="Copy upwards" onclick="copyup('outbox2')" id="button"/></span><span class="quarter"><input type="button" value="Copy upwards" onclick="copyup('outbox3')" id="button"/></span><span class="quarter"><input type="button" value="Copy upwards" onclick="copyup('outbox4')" id="button"/></span>
+				</div>
+			
+
+				<textarea onchange="encodingToMidiFile(this.value, 'download_outbox1')" id="outbox1" style="display: none"></textarea>
+				
+				<textarea onchange="encodingToMidiFile(this.value, 'download_outbox2')" id="outbox2" style="display: none"></textarea>
+				
+				<textarea onchange="encodingToMidiFile(this.value, 'download_outbox3')" id="outbox3" style="display: none"></textarea>
+				
+				<textarea onchange="encodingToMidiFile(this.value, 'download_outbox4')" id="outbox4" style="display: none"></textarea>
+			</div>
+		</div>
+	
+	
+	<script src="bundle.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
+
